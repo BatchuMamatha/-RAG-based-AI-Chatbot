@@ -9,8 +9,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const chunkCountElem = document.getElementById("chunk-count");
     const llmNameElem = document.getElementById("llm-name");
     const welcomeBanner = document.getElementById("welcome-banner");
+    const themeToggleBtn = document.getElementById("theme-toggle-btn");
+    const themeIcon = document.getElementById("theme-icon");
+    const themeText = document.getElementById("theme-text");
 
     let isProcessing = false;
+
+    // Theme Management (Default: Light / White Theme)
+    function applyTheme(theme) {
+        if (theme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+            if (themeIcon) themeIcon.textContent = "☀️";
+            if (themeText) themeText.textContent = "Light Mode";
+        } else {
+            document.documentElement.removeAttribute("data-theme");
+            if (themeIcon) themeIcon.textContent = "🌙";
+            if (themeText) themeText.textContent = "Dark Mode";
+        }
+        localStorage.setItem("rag_theme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("rag_theme") || "light";
+    applyTheme(savedTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+            applyTheme(current === "dark" ? "light" : "dark");
+        });
+    }
 
     // 1. Fetch Health and Metadata
     async function loadHealth() {

@@ -24,6 +24,20 @@ Answers questions **strictly grounded** in the [Agentic AI eBook](Ebook-Agentic-
 
 ---
 
+## 📸 Screenshots & Web Interface (Light / White Theme)
+
+### 1. Interactive Landing View
+*Clean, modern white theme with sidebar displaying indexed knowledge chunks, vector database status, and quick-prompt pills:*
+
+![Agentic RAG Assistant Landing View](assets/chatbot_ui_landing.png)
+
+### 2. Grounded Answer with Retrieved Context Chunks & Confidence Scoring
+*Real-time response execution showing strict grounding badge, confidence score (0.747 HIGH), and expandable retrieved chunks drawer with page numbers and relevance scores:*
+
+![Agentic RAG Assistant Interactive Response](assets/chatbot_ui_response.png)
+
+---
+
 ## 📁 Repository Structure
 
 ```
