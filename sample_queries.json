@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "question": "What is Agentic AI and how does it differ from traditional LLMs?",
+    "expected_chapter": "1.1 The Terminology Maze / Distinct Roles",
+    "expected_pages": [9, 10],
+    "description": "Explores the fundamental conceptual difference between static prompt-response LLMs and goal-driven autonomous agents."
+  },
+  {
+    "id": 2,
+    "question": "What are the core pillars of an Agentic AI system from perception to execution?",
+    "expected_chapter": "2.1 The Core Pillars: From Perception to Execution",
+    "expected_pages": [19, 20, 21],
+    "description": "Details the architectural pillars including perception, memory, reasoning, and tool execution."
+  },
+  {
+    "id": 3,
+    "question": "What is a Multi-Agent System (MAS) and how does it operate in a supply chain crisis scenario?",
+    "expected_chapter": "3.2 MAS Scenario: A Supply Chain in Crisis",
+    "expected_pages": [30, 31, 33, 34],
+    "description": "Examines multi-agent collaboration, routing optimization, and demand forecasting under sudden surges."
+  },
+  {
+    "id": 4,
+    "question": "What are the key challenges and mitigation strategies when orchestrating Multi-Agent Systems?",
+    "expected_chapter": "4.1 Challenges of Orchestrating Complex Agentic Systems",
+    "expected_pages": [38, 39, 40],
+    "description": "Analyzes communication mechanisms, coordination overhead, task breakdown, and conflict resolution."
+  },
+  {
+    "id": 5,
+    "question": "What are the essential steps an organization should take to assess readiness for Agentic AI?",
+    "expected_chapter": "Organizational Maturity & Readiness Assessment",
+    "expected_pages": [48, 50, 52, 53],
+    "description": "Reviews the readiness checklist, data quality prerequisites, and governance frameworks."
+  },
+  {
+    "id": 6,
+    "question": "How is Agentic AI practically applied in manufacturing and retail?",
+    "expected_chapter": "Practical Applications of Agentic AI / Use Cases",
+    "expected_pages": [54, 55, 58],
+    "description": "Highlights case studies on assembly line optimization, demand forecasting, and inventory tracking."
+  },
+  {
+    "id": 7,
+    "question": "Who won the 2022 FIFA World Cup in Qatar?",
+    "expected_chapter": "Out-of-Domain Control",
+    "expected_pages": [],
+    "description": "Strict negative test: ensures model safely acknowledges absence of information rather than hallucinating external facts."
+  }
+]

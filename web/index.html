@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI eBook - RAG Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="brand-icon">📖</div>
+                    <div class="brand-text">
+                        <h2>Agentic RAG</h2>
+                        <span>LangGraph • Pinecone</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Base Card -->
+            <div class="kb-card">
+                <div class="kb-header">
+                    <span class="kb-tag">KNOWLEDGE BASE</span>
+                    <span class="status-indicator online"></span>
+                </div>
+                <h3>Agentic AI eBook</h3>
+                <p>60 pages analyzing Autonomous Systems, Orchestration, MAS & Enterprise Readiness.</p>
+                <div class="kb-meta">
+                    <div class="meta-item">
+                        <span class="label">Store:</span>
+                        <span class="val" id="db-type">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Chunks:</span>
+                        <span class="val" id="chunk-count">...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Queries -->
+            <div class="sample-queries-section">
+                <h4>SAMPLE QUERIES</h4>
+                <div class="query-list" id="sample-query-list">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="clear-btn" id="clear-chat-btn">
+                    <span>🗑️</span> Clear Conversation
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Top Navigation Bar -->
+            <header class="top-nav">
+                <div class="nav-left">
+                    <h1 class="nav-title">Agentic AI Knowledge Assistant</h1>
+                    <span class="grounding-badge">🛡️ Strict PDF Grounding</span>
+                </div>
+                <div class="nav-right">
+                    <div class="model-pill" id="model-pill">
+                        <span class="dot"></span>
+                        <span id="llm-name">Ready</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Chat History Messages -->
+            <div class="chat-history" id="chat-history">
+                <div class="welcome-banner" id="welcome-banner">
+                    <div class="welcome-icon">✨</div>
+                    <h2>Welcome to the Agentic AI RAG Assistant</h2>
+                    <p>I answer questions strictly based on the <strong>Agentic AI eBook</strong>. Every answer is verified for factual grounding with retrieved context excerpts and confidence scores.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <span class="f-icon">⚡</span>
+                            <h5>LangGraph DAG</h5>
+                            <p>Multi-step retrieval, relevance grading, and grounded generation.</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="f-icon">🎯</span>
+                            <h5>Strict Grounding</h5>
+                            <p>Refuses hallucination if context is missing from the eBook.</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="f-icon">📊</span>
+                            <h5>Confidence Scoring</h5>
+                            <p>Real-time calculation of relevance and retrieval quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <form class="input-form" id="chat-form">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Ask anything about the Agentic AI eBook (e.g., 'What are the core pillars of Agentic AI?')..." 
+                        autocomplete="off"
+                        required
+                    />
+                    <button type="submit" id="send-btn" class="send-btn" title="Send Question">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+                <div class="input-hint">
+                    Strictly grounded in <code>Ebook-Agentic-AI.pdf</code> • Powered by LangGraph & Vector Embeddings
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

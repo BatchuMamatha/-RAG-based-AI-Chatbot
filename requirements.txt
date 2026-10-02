@@ -1,0 +1,32 @@
+# Core LangChain & LangGraph
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langgraph>=1.0.0
+
+# Vector Databases
+pinecone>=7.0.0
+langchain-pinecone>=0.2.0
+chromadb>=0.5.0
+faiss-cpu>=1.9.0
+
+# LLM & Embedding Integrations
+langchain-openai>=0.2.0
+langchain-google-genai>=2.0.0
+langchain-groq>=0.2.0
+sentence-transformers>=3.0.0
+transformers>=4.40.0
+huggingface-hub>=0.34.0
+
+# Document Ingestion & Processing
+pymupdf>=1.24.0
+pypdf>=5.0.0
+
+# API & Web Serving
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.7.0
+python-dotenv>=1.0.1
+streamlit>=1.38.0
+requests>=2.31.0

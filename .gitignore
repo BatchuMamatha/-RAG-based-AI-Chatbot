@@ -1,0 +1,29 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment files
+.env
+
+# Database and persistence stores
+chroma_db/
+*.db
+*.sqlite3
+
+# Logs & temp files
+*.log
+pdf_summary.txt
+
+# IDE & Editor files
+.vscode/
+.idea/
+.DS_Store
