@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(dotenv_path=BASE_DIR / ".env", override=False)
 
 class Settings:
+    BASE_DIR: Path = BASE_DIR
     # Knowledge Base
     PDF_PATH: str = os.getenv("PDF_PATH", str(BASE_DIR / "Ebook-Agentic-AI.pdf"))
     

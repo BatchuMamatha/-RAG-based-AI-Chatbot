@@ -41,8 +41,8 @@ app.add_middleware(
 
 # Request & Response Models
 class ChatRequest(BaseModel):
-    question: str = Field(..., example="What are the core pillars of an Agentic AI system?")
-    chat_history: Optional[List[Dict[str, str]]] = Field(default=[], example=[])
+    question: str = Field(..., json_schema_extra={"example": "What are the core pillars of an Agentic AI system?"})
+    chat_history: Optional[List[Dict[str, str]]] = Field(default=[], json_schema_extra={"example": []})
 
 class ContextChunk(BaseModel):
     chunk_id: Optional[str] = None
@@ -78,15 +78,15 @@ class IngestResponse(BaseModel):
 def health_check():
     """Returns system status, active vector store, and indexed vector count."""
     try:
-        store = get_vector_store()
-        count = store.count()
+        pipeline = get_rag_pipeline()
+        count = pipeline.vector_store.count()
         return {
             "status": "healthy",
             "vector_store": settings.get_effective_vector_db(),
             "indexed_vectors": count,
             "embedding_provider": settings.EMBEDDING_PROVIDER,
             "llm_provider": settings.get_effective_llm_provider(),
-            "pdf_source": settings.PDF_PATH
+            "pdf_source": str(settings.PDF_PATH)
         }
     except Exception as e:
         return {
